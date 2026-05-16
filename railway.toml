@@ -3,11 +3,4 @@ builder = "dockerfile"
 dockerfilePath = "Dockerfile"
 
 [deploy]
-# IB Gateway takes ~90s to start (JVM + IBKR login)
-healthcheckPath = ""
 restartPolicyType = "always"
-# Expose internal port (master-bot connects via railway.internal hostname)
-# DO NOT add a public domain to this service — API port should stay internal
-
-[[services]]
-name = "ibkr-gateway"
